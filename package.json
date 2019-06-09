@@ -1,0 +1,24 @@
+{
+  "name": "urlshortner",
+  "version": "1.0.0",
+  "description": "A URL Shortner with a cool attitude.",
+  "author": "KaniRobinson",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/dotenv": "^1.3.0",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "vee-validate": "^2.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "tailwindcss": "^1.0.0"
+  }
+}
