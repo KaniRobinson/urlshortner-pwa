@@ -5,7 +5,7 @@ export default {
       .catch(error => { throw error })
   },
   async list({ commit }) {
-    return await this.$axios.$get('/links', formData)
+    return await this.$axios.$get('/links')
       .then(response => { commit('setLinks', response); return response.data })
       .catch(error => { throw error })
   },
