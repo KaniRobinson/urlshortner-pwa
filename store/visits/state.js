@@ -4,9 +4,5 @@ export default () => ({
     links: {},
     meta: {},
   },
-  analytics: {
-    data: [],
-    links: {},
-    meta: {},
-  },
+  analytics: [],
 })

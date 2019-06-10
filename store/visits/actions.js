@@ -9,4 +9,9 @@ export default {
       .then(response => { commit('setAnalytics', response); return response })
       .catch(error => { throw error })
   },
+  async paginate({ commit }, options) {
+    return await this.$axios.get(options.next)
+      .then(response => { commit('pushVisits', response.data); return response.data })
+      .catch(error => { throw error })
+  },
 }

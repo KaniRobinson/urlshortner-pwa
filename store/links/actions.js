@@ -9,6 +9,11 @@ export default {
       .then(response => { commit('setLinks', response); return response.data })
       .catch(error => { throw error })
   },
+  async paginate({ commit }, options) {
+    return await this.$axios.get(options.next)
+      .then(response => { commit('pushLinks', response.data); return response.data })
+      .catch(error => { throw error })
+  },
   async view({ commit }, { token }) {
     return await this.$axios.$get(`/links/${token}`)
       .then(response => { commit('setLink', response.data); return response.data })

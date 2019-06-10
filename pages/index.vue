@@ -23,7 +23,17 @@
     </div>
 
     <div class="w-full px-4 mb-4">
-      <pre>{{ links.data }}</pre>
+      <p class="mb-4 text-xl">Recent Links</p>
+      <ul class="list-reset mb-4">
+        <li
+          v-for="(link,index) in links.data"
+          :key="index"
+          class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex items-center">
+          <i class="fa fa-link mr-4 text-2xl" />
+          <p class="font-bold mr-4 flex-1">{{ link.url }}</p>
+          <button class="border-2 border-blue-500 hover:bg-blue-500 hover:text-white text-blue-500 py-1 px-2 rounded" @click="handleCopyLink(link.link)">Share Link</button>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -53,6 +63,15 @@ export default {
       listLinks: 'links/list',
       createLink: 'links/create',
     }),
+    handleCopyLink(link) {
+      const input = document.createElement('input')
+      document.body.appendChild(input)
+      input.value = link
+      input.select()
+      document.execCommand('copy')
+      input.remove()
+      alert('Copied link to clipboard')
+    },
     handleShorternUrl(event) {
       event.preventDefault()
       this.errors.clear()

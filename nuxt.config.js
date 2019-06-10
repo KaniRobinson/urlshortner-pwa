@@ -71,7 +71,7 @@ export default {
    */
   plugins: [
     '~plugins/axios',
-    '~plugins/veevalidate'
+    '~plugins/veevalidate',
   ],
 
   axios: {
